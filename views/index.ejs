@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        #guest {
+            padding-right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h3>
+        <% include ./partials/header %>
+    </h3>
+    <% if(entries.length){ entries.forEach(function(entry){ %>
+        <div class="panel panel-info">
+            <div class="panel panel-heading">
+                <div class="text-muted pull-right">
+                    <%= entry.published %>
+                </div>
+                <h3 class="panel-title">
+                    <%= entry.title %>
+                </h3>
+            </div>
+            <div class="panel-body">
+                <%= entry.body %>
+            </div>
+        </div>
+        </div>
+        <% }) %>
+            <% } else { %>
+                <% } %>
+                    <% include ./partials/footer %>
+</body>
+
+</html>
